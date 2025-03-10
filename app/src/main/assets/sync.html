@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/hextree.css">
+    <title>Login Mock</title>
+    <style>
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-darker text-white pt-10 font-sans">
+<div class="bg-dark m-5 rounded-lg p-5">
+    <div class="text-lg tracking-wider flex flex-row content-center items-center justify-center">
+        <div>
+            <img src="/static/logo.svg" class="w-9 inline object-scale-down mr-3">
+        </div>
+        <div class="mt-1">
+            <span class="font-black">hextree</span><span class="text-green font-bold">.</span>io
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <h1 class="text-2xl font-bold">Sync App</h1>
+    </div>
+    <div class="text-grey text-sm mt-2 text-center">
+        Simulate syncing between Android app and website
+    </div>
+    <div class="text-center mt-5 mb-5">
+        <button id="connect" disabled class="w-full cursor-pointer text-lg rounded-md focus:outline-none whitespace-nowrap bg-green bg-opacity-70 focus:ring-green text-white" >
+            <div class="py-2 px-5 whitespace-nowrap">
+                SYNC STATE
+            </div>
+        </button>
+    </div>
+    <div id="syncdata" class="hidden">
+        <div class="text-grey mt-7 mb-3 text-center">
+            Solved Flags: <span id="flag_count" class="font-bold"></span>
+        </div>
+        <div id="flags" class="flex flex-wrap justify-center">
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+
+    const CONNECT_BUTTON = document.getElementById('connect');
+
+    window.addEventListener("message", function (event) {
+        // Check if we got any ports
+        if (!event.ports || event.ports.length === 0) return;
+        window.port = event.ports[0];
+
+        // Set up receiving messages from this port
+        window.port.onmessage = function(event) {
+            if (event.data === "init") {
+                CONNECT_BUTTON.classList.add('hover:bg-opacity-70');
+                CONNECT_BUTTON.classList.remove('bg-opacity-70');
+                CONNECT_BUTTON.attributes.removeNamedItem('disabled');
+                window.port.postMessage(JSON.stringify({message: 'init_complete'}));
+
+                CONNECT_BUTTON.onclick = function() {
+                    //CONNECT_BUTTON.remove();
+                    window.port.postMessage(JSON.stringify({message: 'get_solved_flags'}));
+                    window.port.postMessage(JSON.stringify({message: 'get_solved_count'}));
+                };
+                return;
+            }
+            let msg = JSON.parse(event.data);
+            document.getElementById('syncdata').classList.remove('hidden');
+            if (msg.message === "solved_flags") {
+                let FLAGS = document.getElementById('flags');
+                FLAGS.innerHTML = '';
+                for (let flag of Object.keys(msg.data)) {
+                    let FLAG = document.createElement('div');
+                    FLAG.style.margin = '5px';
+                    FLAG.style.border = '1px solid white';
+                    FLAG.style.padding = '3px 6px';
+                    FLAG.style.borderRadius = '5px';
+                    FLAG.innerText = `${flag.split(':')[0]}`;
+                    FLAGS.append(FLAG);
+                }
+            }
+            if (msg.message === "solved_count") {
+                document.getElementById('flag_count').innerText = msg.data;
+            }
+            if (msg.message === "success") {
+                document.body.classList.remove('bg-darker');
+                document.body.classList.add('bg-green');
+                window.port.postMessage(JSON.stringify({message: 'get_solved_flags'}));
+                window.port.postMessage(JSON.stringify({message: 'get_solved_count'}));
+            }
+        };
+    });
+</script>
+</html>

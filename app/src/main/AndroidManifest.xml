@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <queries>
+        <package android:name="io.hextree.attacksurface"/>
+    </queries>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+
+    <application
+            android:allowBackup="true"
+            android:extractNativeLibs="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.GetFlag"
+            tools:targetApi="31">
+        <provider
+                android:authorities="com.hextree.flag37"
+                android:name="com.hextree.getflag.ContentProviderFlag37"
+                android:exported="true"
+                android:grantUriPermissions="true"/>
+        <receiver
+                android:name=".BroadcastReceiverFlag18"
+                android:exported="true"
+                android:enabled="true">
+            <intent-filter>
+                <action android:name="io.hextree.broadcast.FREE_FLAG"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BroadcastReceiverFlag21"
+                  android:enabled="true"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="io.hextree.broadcast.GIVE_FLAG"/>
+            </intent-filter>
+
+        </receiver>
+        <activity
+                android:name=".Hextree"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".ImplicitIntent"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="io.hextree.attacksurface.ATTACK_ME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".DeeplinkFlag14"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                        android:scheme="hex"
+                        android:host="token"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".PendingIntentFlag22"
+                  android:exported="true">
+        </activity>
+        <activity android:name=".PendingIntentFlag23"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="io.hextree.attacksurface.MUTATE_ME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContentProviderFlag33_1" android:exported="false">
+            <intent-filter>
+                <action android:name="com.hextree.getflag.ActionContentProviderFlag33_1"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContentProviderFlag33_2" android:exported="true">
+            <intent-filter>
+                <action android:name="io.hextree.FLAG33"/>
+                <data android:scheme="content"
+                      android:host="io.hextree.flag33_2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContentProviderHijacking" android:exported="true"/>
+        <activity android:name=".ContentProviderFlag34" android:exported="true"/>
+        <activity android:name=".ContentProviderFlag35" android:exported="true"/>
+        <activity android:name=".ContentProviderFlag36" android:exported="true"/>
+        <activity android:name=".ContentProviderFlag37" android:exported="false"/>
+    </application>
+
+</manifest>

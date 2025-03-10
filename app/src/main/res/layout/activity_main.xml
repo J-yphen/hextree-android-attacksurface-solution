@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:gravity="center" android:id="@+id/basic_layout">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click below for Flags"
+                android:textSize="26sp" android:textStyle="bold"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <Button
+                        android:text="Flag1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f1"/>
+                <Button
+                        android:text="Flag2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f2"/>
+                <Button
+                        android:text="Flag3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f3"/>
+                <Button
+                        android:text="Flag4 (Press 4 times)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f4"/>
+                <Button
+                        android:text="Flag5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f5"/>
+                <Button
+                        android:text="Flag6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f6"/>
+                <Button
+                        android:text="Flag7 (Click again after open app from recent)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f7"/>
+                <Button
+                        android:text="Flag8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f8"/>
+                <Button
+                        android:text="Flag9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f9"/>
+                <Button
+                        android:text="Flag10 (Launch activity in the target app)"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f10"/>
+                <Button
+                        android:text="Flag11 (Launch activity in the target app)"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f11"/>
+                <Button
+                        android:text="Flag12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f12"/>
+                <Button
+                        android:text="Flag13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f13"/>
+                <Button
+                        android:text="Flag14 (Launch activity in the target app)"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f14"/>
+                <Button
+                        android:text="Flag15 (Launch activity in the target app and paste payload)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f15"/>
+                <Button
+                        android:text="Flag16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f16"/>
+                <Button
+                        android:text="Flag17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f17"/>
+                <Button
+                        android:text="Flag18 (Start service listener dynamically)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f18"/>
+                <Button
+                        android:text="Flag19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f19"/>
+                <Button
+                        android:text="Flag20 (Launch Target activity then click)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f20"/>
+                <Button
+                        android:text="Flag20 M2 (After click, open target app and launch activity then click notification button)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f20_m2"/>
+                <Button
+                        android:text="Flag21 (Target get itself reveals flag in log when notification button clicked)"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f21"/>
+                <Button
+                        android:text="Flag22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f22"/>
+                <Button
+                        android:text="Flag23 (Launch activity in the target app)"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f23"/>
+                <Button
+                        android:text="Flag24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f24"/>
+                <Button
+                        android:text="Flag25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f25"/>
+                <Button
+                        android:text="Flag26 (After clicking open target app)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f26"/>
+                <Button
+                        android:text="Flag27 (After clicking open target app)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f27"/>
+                <Button
+                        android:text="Flag28 (After clicking open target app)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f28"/>
+                <Button
+                        android:text="Flag29 (After clicking open target app)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f29"/>
+                <Button
+                        android:text="Flag30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f30"/>
+                <Button
+                        android:text="Flag31"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f31"/>
+                <Button
+                        android:text="Flag32"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f32"/>
+                <Button
+                        android:text="Flag33_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f33_1"/>
+                <Button
+                        android:text="Flag33_2 (Launch activity in the target app)"
+                        android:enabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f33_2"/>
+                <Button
+                        android:text="Hijacking Content Provider Access"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f8_hijacking_content_provider_access"/>
+                <Button
+                        android:text="Flag34"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f34"/>
+                <Button
+                        android:text="Flag35"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f35"/>
+                <Button
+                        android:text="Flag36"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f36"/>
+                <Button
+                        android:text="Flag37"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f37"/>
+                <Button
+                        android:text="Flag38"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f38"/>
+                <Button
+                        android:text="Flag39"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f39"/>
+                <Button
+                        android:text="Flag40"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f40"/>
+                <Button
+                        android:text="Flag41"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/btn_launch_activity_f41"/>
+            </LinearLayout>
+        </ScrollView>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:visibility="gone">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <TextView
+                        android:text="Nothing Returned!"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/flag_log"
+                        android:visibility="invisible"
+                        android:textAlignment="center" android:textSize="14sp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

